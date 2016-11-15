@@ -11,6 +11,9 @@ import cluster
 
 
 class DBSCAN(object):
+    '''
+    DBSCAN算法类
+    '''
 
     data_set = []       # 数据集
     clusters = []       # 簇
@@ -26,6 +29,10 @@ class DBSCAN(object):
         self.MinPts = MinPts
 
     def run(self):
+        '''
+        执行算法
+        :return: 聚类处理好的簇
+        '''
 
         noise = cluster.Cluster("Noise") # 这里将所有噪声点也当作一个簇来对待。创建噪声点簇。
         for point in self.data_set:
@@ -47,6 +54,11 @@ class DBSCAN(object):
         return self.clusters
 
     def find_neighbors(self, point):
+        '''
+        查询邻域
+        :param point: 需要查询邻域的对象（点）
+        :return: 该点的邻域
+        '''
 
         neighbors = [] # 邻域点列表
 
@@ -58,6 +70,12 @@ class DBSCAN(object):
         return neighbors
 
     def form_cluster(self, neighbors, new_cluster):
+        '''
+        将符合要求的点归入簇
+        :param neighbors: 某个点的邻域
+        :param new_cluster: 新建的簇
+        :return: None
+        '''
 
         for n in neighbors: # 检查邻域中的点
             if n not in self.visited_points: # 检查该点是否已经被标记过

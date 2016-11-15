@@ -20,10 +20,13 @@ class Draw(object):
         self.cluster = cluster
 
     def run(self):
+        '''
+        执行画图的方法
+        :return: None
+        '''
 
-        plt.subplot(111)
-        plt.title("DBSCAN Algorithm")
-        name = []
+        plt.subplot(111) # 设置子图
+        name = [] # 簇名列表
         for c in self.cluster:
             name.append(c.get_name())
             points = c.get_points()
@@ -37,7 +40,7 @@ class Draw(object):
 
             colors = ['r', 'g', 'b', 'y', 'c', 'k', 'm', 'w']
             #print(colors)
-            plt.scatter(x, y, c=random.sample(colors, 1), alpha=1, s=50)
+            plt.scatter(x, y, c=random.sample(colors, 1), alpha=1, s=50) # 作散点图
 
-        plt.legend(name, loc="lower left")
-        plt.show()
+        plt.legend(name, loc="lower left") # 作图例
+        plt.show() # 显示图形

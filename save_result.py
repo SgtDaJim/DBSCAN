@@ -7,9 +7,18 @@
 # @GitHub     : https://github.com/SgtDaJim
 
 class SaveResult(object):
+    '''
+    将算法结果保存到文件的类
+    '''
 
     @staticmethod
     def save(file_name, clusters):
+        '''
+        执行保存的静态方法
+        :param file_name: csv文件名（结果文件名称将根据该名称得出）
+        :param clusters: 算法结果
+        :return: None
+        '''
         cut = file_name[:file_name.find(".csv")]
         result_name = cut + "_solved.txt"
 
