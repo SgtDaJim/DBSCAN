@@ -10,6 +10,7 @@ import dbscan
 import draw
 import csv
 import configparser
+import save_result
 
 def main():
 
@@ -48,6 +49,9 @@ def main():
     # 画图，直观表现聚类后数据
     draw_runner = draw.Draw(clusters)
     draw_runner.run()
+
+    # 将结果保存到文件
+    save_result.SaveResult.save(data_csv, clusters)
 
 if __name__ == "__main__":
     main()
