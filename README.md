@@ -13,10 +13,11 @@ DBSCAN
     
 ## 用法
     1.notepad打开config.ini，填写内容：
-        data_file=待聚类数据文件(csv格式)的相对路径
+        data_file=待聚类数据文件(csv格式)的路径
         Eps=对象半径Eps
         MinPts=给定邻域N-Eps(p)包含的点的最小数目
       保存后退出。
     2.运行main.py
     3.观察console输出的簇和噪声，和matplotlib生成的散点图，得出结果。
+    4.与原数据文件同目录下产生保存有算法结果的文件。
 
