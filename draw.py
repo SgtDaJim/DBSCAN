@@ -26,6 +26,9 @@ class Draw(object):
         '''
 
         plt.subplot(111) # 设置子图
+        plt.title("DBSCAN Result")
+        plt.xlabel("X-Axis")
+        plt.ylabel("Y-Axis")
         name = [] # 簇名列表
         for c in self.cluster:
             name.append(c.get_name())
